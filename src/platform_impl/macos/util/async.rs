@@ -201,3 +201,7 @@ pub(crate) fn close_sync(window: &NSWindow) {
         });
     });
 }
+
+pub(crate) fn get_kbd_type() -> u8 {
+    run_on_main(|| unsafe { ffi::LMGetKbdType() })
+}
